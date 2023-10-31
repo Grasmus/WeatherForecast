@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.weatherforecast.ui.viewmodels.WeatherViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.views.WeatherViewFragment">
+
+        <TextView
+            android:id="@+id/textViewCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="@{viewModel.cityName}"/>
+
+        <TextView
+            android:id="@+id/textViewRegion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="@{viewModel.region}"/>
+
+        <TextView
+            android:id="@+id/textViewCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="@{viewModel.country}"/>
+
+        <TextView
+            android:id="@+id/textViewLocalTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="@{viewModel.localTime}"/>
+
+        <TextView
+            android:id="@+id/textViewTempC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="@{viewModel.tempC}"/>
+
+        <TextView
+            android:id="@+id/textViewTempF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="@{viewModel.tempF}"/>
+
+        <TextView
+            android:id="@+id/textViewCondition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="@{viewModel.condition}"/>
+
+        <TextView
+            android:id="@+id/textViewWindMph"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="@{viewModel.windMph}"/>
+
+        <TextView
+            android:id="@+id/textViewWindKph"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="@{viewModel.windKph}"/>
+
+        <TextView
+            android:id="@+id/textViewWindDir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="@{viewModel.windDir}"/>
+
+        <TextView
+            android:id="@+id/textViewHumidity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="@{viewModel.humidity}"/>
+
+        <TextView
+            android:id="@+id/textViewFeelsLikeC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="@{viewModel.feelsLikeC}"/>
+
+        <TextView
+            android:id="@+id/textViewFeelsLikeF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="@{viewModel.feelsLikeF}"/>
+
+        <TextView
+            android:id="@+id/textViewUv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="@{viewModel.uv}"/>
+
+    </LinearLayout>
+</layout>
