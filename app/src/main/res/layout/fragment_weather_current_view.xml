@@ -4,7 +4,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.weatherforecast.ui.weatherview.WeatherViewModel" />
+            type="com.example.weatherforecast.ui.currentweatherview.WeatherCurrentViewModel" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ui.weatherview.WeatherViewFragment">
+        tools:context=".ui.currentweatherview.WeatherCurrentViewFragment">
 
         <TextView
             android:id="@+id/textViewCity"

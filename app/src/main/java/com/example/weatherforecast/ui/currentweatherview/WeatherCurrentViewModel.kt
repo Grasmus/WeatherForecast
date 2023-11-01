@@ -1,27 +1,26 @@
-package com.example.weatherforecast.ui.weatherview
+package com.example.weatherforecast.ui.currentweatherview
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.map
 import androidx.lifecycle.viewModelScope
-import com.example.weatherforecast.domain.entities.WeatherResponseEntity
+import com.example.weatherforecast.domain.entities.WeatherCurrentResponseEntity
 import com.example.weatherforecast.domain.entities.weathermodules.WeatherCondition
 import com.example.weatherforecast.domain.entities.weathermodules.WeatherCurrent
 import com.example.weatherforecast.domain.entities.weathermodules.WeatherLocation
-import com.example.weatherforecast.domain.usecases.GetWeather
+import com.example.weatherforecast.domain.usecases.GetCurrentWeatherByCoords
 import kotlinx.coroutines.launch
 
-class WeatherViewModel(getWeather: GetWeather, city: String) : ViewModel() {
-
+class WeatherCurrentViewModel(getWeather: GetCurrentWeatherByCoords, lat: Float, long: Float) : ViewModel() {
     private val weatherData = MutableLiveData(
-        WeatherResponseEntity(
+        WeatherCurrentResponseEntity(
         WeatherLocation(),
         WeatherCurrent(WeatherCondition())
     ))
 
     init {
-        getWeather(::updateWeather, city)
+        getWeather(::updateWeather, lat, long)
     }
 
     val cityName: LiveData<String> = weatherData.map { weather ->
@@ -80,7 +79,7 @@ class WeatherViewModel(getWeather: GetWeather, city: String) : ViewModel() {
         "UV: " + weather.current.uv.toString()
     }
 
-    private fun updateWeather(weather: WeatherResponseEntity?) {
+    private fun updateWeather(weather: WeatherCurrentResponseEntity?) {
         viewModelScope.launch {
             if (weather != null) {
                 weatherData.postValue(weather)

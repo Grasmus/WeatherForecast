@@ -25,7 +25,11 @@ class CityListViewModel(private val getCities: GetCities) : ViewModel() {
         val cityViewModels = mutableListOf<CityViewModel>()
 
         cities.forEach {cityEntity ->
-            cityViewModels.add(CityViewModel(cityEntity.name, cityEntity.country))
+            cityViewModels.add(CityViewModel(
+                cityEntity.name,
+                cityEntity.country,
+                cityEntity.lat,
+                cityEntity.long))
         }
 
         return cityViewModels

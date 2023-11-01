@@ -11,16 +11,37 @@
         android:label="fragment_city_view"
         tools:layout="@layout/fragment_city_view" >
         <action
-            android:id="@+id/action_cityViewFragment_to_weatherViewFragment"
+            android:id="@+id/action_cityViewFragment_to_weatherCurrentViewFragment"
             app:destination="@id/weatherViewFragment" />
+        <action
+            android:id="@+id/action_cityViewFragment_to_weatherTomorrowViewFragment"
+            app:destination="@id/weatherTomorrowViewFragment" />
     </fragment>
     <fragment
         android:id="@+id/weatherViewFragment"
-        android:name="com.example.weatherforecast.ui.weatherview.WeatherViewFragment"
+        android:name="com.example.weatherforecast.ui.currentweatherview.WeatherCurrentViewFragment"
         android:label="fragment_weather_view"
-        tools:layout="@layout/fragment_weather_view" >
+        tools:layout="@layout/fragment_weather_current_view" >
         <argument
-            android:name="city"
-            app:argType="string" />
+            android:name="lat"
+            app:argType="float"
+            android:defaultValue="0.0" />
+        <argument
+            android:name="long"
+            app:argType="float"
+            android:defaultValue="0.0" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherTomorrowViewFragment"
+        android:name="com.example.weatherforecast.ui.tomorrowweatherview.WeatherTomorrowViewFragment"
+        android:label="WeatherTomorrowViewFragment" >
+        <argument
+            android:name="lat"
+            app:argType="float"
+            android:defaultValue="0.0" />
+        <argument
+            android:name="long"
+            app:argType="float"
+            android:defaultValue="0.0" />
     </fragment>
 </navigation>

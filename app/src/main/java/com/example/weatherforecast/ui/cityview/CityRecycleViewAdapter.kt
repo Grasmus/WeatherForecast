@@ -34,7 +34,10 @@ class CityRecycleViewAdapter :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.itemView.setOnClickListener {
-            val action = CityViewFragmentDirections.actionCityViewFragmentToWeatherViewFragment(cities[position].name)
+            val action = CityViewFragmentDirections.
+            actionCityViewFragmentToWeatherTomorrowViewFragment(
+                cities[position].lat,
+                cities[position].long)
 
             it.findNavController().navigate(action)
         }
