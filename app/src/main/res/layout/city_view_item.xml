@@ -4,7 +4,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.weatherforecast.ui.viewmodels.CityViewModel" />
+            type="com.example.weatherforecast.ui.cityview.CityViewModel" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"

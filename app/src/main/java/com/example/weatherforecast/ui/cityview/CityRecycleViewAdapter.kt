@@ -1,4 +1,4 @@
-package com.example.weatherforecast.ui
+package com.example.weatherforecast.ui.cityview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,8 +8,6 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherforecast.BR
 import com.example.weatherforecast.R
-import com.example.weatherforecast.ui.viewmodels.CityViewModel
-import com.example.weatherforecast.ui.views.CityViewFragmentDirections
 
 class CityRecycleViewAdapter :
     RecyclerView.Adapter<CityRecycleViewAdapter.ViewHolder>() {

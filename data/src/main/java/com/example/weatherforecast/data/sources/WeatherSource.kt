@@ -1,8 +1,7 @@
-package com.example.weatherforecast.framework
+package com.example.weatherforecast.data.sources
 
-import com.example.weatherforecast.BuildConfig
-import com.example.weatherforecast.data.IWeatherSource
-import com.example.weatherforecast.domain.weathermodules.WeatherResponseEntity
+import com.example.weatherforecast.data.repositories.IWeatherSource
+import com.example.weatherforecast.domain.entities.WeatherResponseEntity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -11,9 +10,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-class WeatherSource: IWeatherSource {
+class WeatherSource(weatherApiUrl: String, private val weatherApiKey: String): IWeatherSource {
     private val retrofit = Retrofit.Builder()
-        .baseUrl(BuildConfig.WEATHER_API_URL)
+        .baseUrl(weatherApiUrl)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
@@ -22,7 +21,7 @@ class WeatherSource: IWeatherSource {
 
         val apiService = retrofit.create(ApiService::class.java)
 
-        apiService.getCurrentWeather(BuildConfig.WEATHER_API_KEY, city).enqueue( object:
+        apiService.getCurrentWeather(weatherApiKey, city).enqueue( object:
             Callback<WeatherResponseEntity> {
             override fun onResponse(call: Call<WeatherResponseEntity>, response: Response<WeatherResponseEntity>) {
                 if (response.isSuccessful && response.body() != null) {

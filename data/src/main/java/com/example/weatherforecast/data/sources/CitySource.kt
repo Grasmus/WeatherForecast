@@ -1,7 +1,7 @@
-package com.example.weatherforecast.framework
+package com.example.weatherforecast.data.sources
 
-import com.example.weatherforecast.data.ICitySource
-import com.example.weatherforecast.domain.CityEntity
+import com.example.weatherforecast.data.repositories.ICitySource
+import com.example.weatherforecast.domain.entities.CityEntity
 
 class CitySource: ICitySource {
     override fun getCities(): List<CityEntity> {
@@ -45,6 +45,7 @@ class CitySource: ICitySource {
             CityEntity("Brovary", "Ukraine"),
             CityEntity("Yevpatoria", "Ukraine"),
             CityEntity("Berdiansk", "Ukraine"),
-            CityEntity("Kamianets-Podilskyi", "Ukraine"))
+            CityEntity("Kamianets-Podilskyi", "Ukraine")
+        )
     }
 }

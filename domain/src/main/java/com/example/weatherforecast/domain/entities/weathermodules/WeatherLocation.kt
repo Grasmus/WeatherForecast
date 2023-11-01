@@ -1,4 +1,4 @@
-package com.example.weatherforecast.domain.weathermodules
+package com.example.weatherforecast.domain.entities.weathermodules
 
 //commented out fields can be added, if needed
 class WeatherLocation(val name: String = "",

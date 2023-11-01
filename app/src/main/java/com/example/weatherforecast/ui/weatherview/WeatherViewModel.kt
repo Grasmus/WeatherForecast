@@ -1,25 +1,24 @@
-package com.example.weatherforecast.ui.viewmodels
+package com.example.weatherforecast.ui.weatherview
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.map
 import androidx.lifecycle.viewModelScope
-import com.example.weatherforecast.domain.weathermodules.WeatherCondition
-import com.example.weatherforecast.domain.weathermodules.WeatherCurrent
-import com.example.weatherforecast.domain.weathermodules.WeatherLocation
-import com.example.weatherforecast.domain.weathermodules.WeatherResponseEntity
-import com.example.weatherforecast.usecases.GetWeather
+import com.example.weatherforecast.domain.entities.WeatherResponseEntity
+import com.example.weatherforecast.domain.entities.weathermodules.WeatherCondition
+import com.example.weatherforecast.domain.entities.weathermodules.WeatherCurrent
+import com.example.weatherforecast.domain.entities.weathermodules.WeatherLocation
+import com.example.weatherforecast.domain.usecases.GetWeather
 import kotlinx.coroutines.launch
 
-class WeatherViewModel(private val getWeather: GetWeather, city: String) : ViewModel() {
+class WeatherViewModel(getWeather: GetWeather, city: String) : ViewModel() {
 
     private val weatherData = MutableLiveData(
         WeatherResponseEntity(
         WeatherLocation(),
         WeatherCurrent(WeatherCondition())
-    )
-    )
+    ))
 
     init {
         getWeather(::updateWeather, city)

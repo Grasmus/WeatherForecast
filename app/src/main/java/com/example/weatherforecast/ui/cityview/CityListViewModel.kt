@@ -1,13 +1,12 @@
-package com.example.weatherforecast.ui.viewmodels
+package com.example.weatherforecast.ui.cityview
 
 import androidx.databinding.BindingAdapter
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.RecyclerView
-import com.example.weatherforecast.domain.CityEntity
-import com.example.weatherforecast.ui.CityRecycleViewAdapter
-import com.example.weatherforecast.usecases.GetCities
+import com.example.weatherforecast.domain.entities.CityEntity
+import com.example.weatherforecast.domain.usecases.GetCities
 import kotlinx.coroutines.launch
 
 class CityListViewModel(private val getCities: GetCities) : ViewModel() {
